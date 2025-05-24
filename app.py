@@ -18,7 +18,10 @@ our_memories = [
     "going to armageddon together",
     "after toga watchin u fail at geometry dash and u kissing me each time u died",
     "seeing u giggle like a lil kid watching corykenshin",
-    "our son working at maccas"
+    "our son working at maccas",
+    "getting freaky tg 24/7",
+    "my dad catching us at mm3",
+    "u buying window covers so we can get freaky n them not fitting"
 ]
 
 about_you = [
@@ -39,7 +42,9 @@ about_you = [
     "the lil games u play on ps5",
     "how excited u are for gta",
     "when u start overexplaining things u like",
-    "i love you"
+    "i love you",
+    "that pretty dihh",
+    "super duper freaky"
 ]
 
 @app.route('/get-memory')
