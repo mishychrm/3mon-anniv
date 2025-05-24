@@ -36,6 +36,10 @@ about_you = [
     "how u yawn like a whale",
     "when u repeat that lil tiktok thing 'they offered me 4 mil'",
     "everything about you",
+    "the lil games u play on ps5",
+    "how excited u are for gta",
+    "when u start overexplaining things u like",
+    "i love you"
 ]
 
 @app.route('/get-memory')
