@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hi shayan 💗</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #fff0f5;
+            color: #333;
+            text-align: center;
+            padding: 40px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            background-color: #ffb6c1;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+        #result {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 20px;
+        }
+        #music-button {
+            margin-top: 20px;
+            background-color: #ffd6f6;
+            color: #333;
+        }
+        #music-button:hover {
+            background-color: #ffbde6;
+        }
+    </style>
+</head>
+<body>
+    <h1>hi shayan 💞</h1>
+    <p>we’ve been together for <b>{{ days }}</b> days (that’s <b>{{ hours }}</b> hours)</p>
+    <p>every one of those hours has been my favourite</p>
+    <p>ur the oi to my ee ee, i love u</p>
+
+    <button onclick="getMemory()">show me a memory</button>
+    <button onclick="getLove()">something i love about you</button>
+    <button onclick="toggleMusic()" id="music-button">Play Music 🎵</button>
+
+    <div id="result"></div>
+
+    <audio id="bg-music">
+        <source src="{{ url_for('static', filename='24hourssong.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function getMemory() {
+            fetch('/get-memory')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                });
+        }
+
+        function getLove() {
+            fetch('/get-love')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                });
+        }
+
+        const music = document.getElementById("bg-music");
+        const button = document.getElementById("music-button");
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                button.innerText = "play music";
+            } else {
+                music.play();
+                button.innerText = "pause music";
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>
+
