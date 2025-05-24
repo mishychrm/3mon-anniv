@@ -36,6 +36,23 @@
         #music-button:hover {
             background-color: #ffbde6;
         }
+
+        .sparkle {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #ffb6d1;
+            box-shadow: 0 0 8px #ffb6d1, 0 0 12px #ffc0cb;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fade 0.8s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @keyframes fade {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
     </style>
 </head>
 <body>
@@ -46,7 +63,7 @@
 
     <button onclick="getMemory()">show me a memory</button>
     <button onclick="getLove()">something i love about you</button>
-    <button onclick="toggleMusic()" id="music-button">Play Music 🎵</button>
+    <button onclick="toggleMusic()" id="music-button">play music</button>
 
     <div id="result"></div>
 
@@ -79,14 +96,25 @@
         function toggleMusic() {
             if (isPlaying) {
                 music.pause();
-                button.innerText = "play music";
+                button.innerText = "play Music";
             } else {
                 music.play();
-                button.innerText = "pause music";
+                button.innerText = "pause Music";
             }
             isPlaying = !isPlaying;
         }
+
+        // ✨ Sparkle Trail
+        document.addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = `${e.clientX}px`;
+            sparkle.style.top = `${e.clientY}px`;
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 800);
+        });
     </script>
 </body>
 </html>
+
 
