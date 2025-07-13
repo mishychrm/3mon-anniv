@@ -23,7 +23,26 @@ our_memories = [
     "my dad catching us at mm3",
     "u buying window covers so we can get freaky n them not fitting",
     "the week b4 we started dating having those long convos",
-    "o-week",
+    "o-week, spending all night doing random stuff",
+    "being on call watching you play shadow of the colosus",
+    "goin to new brighton n u pushing me on swing cuz u were too nonchalant to join",
+    "randomly goin new brighton at night, quietly sitting on a bench on ur lap watchin the water n kissing you",
+    "you taking us to mama mia night n me getting pmoed ab ss",
+    "bathroom freaky time",
+    "exam time, spending all day tryna study but getting distracted by u",
+    "goin to httyd n the guy actin like he worked there",
+    "stealin ur ring n giving it to my dad (he still got on his desk)"
+    "our joined playlist",
+    "morning after bnbs sittin in mm3 chilling eating mchickens",
+    "when u gave me hello kitty burger n were acting all nonchalant (i was too)",
+    "u givin me my jacket back b4 we started dating n me actin at awks",
+    "first time we hung out tg in day",
+    "u giving me ur teddy bear jacket, now i wear it every week",
+    "u losing all ur rings in that field us drunkenly looking for them",
+    "stayin at c-block so late the lights shut off",
+    "playing scenarios w u like everyday",
+    
+    
 ]
 
 about_you = [
@@ -39,7 +58,6 @@ about_you = [
     "how u love chocolate shakes",
     "ur laugh",
     "how u yawn like a whale",
-    "when u repeat that lil tiktok thing 'they offered me 4 mil'",
     "everything about you",
     "the lil games u play on ps5",
     "how excited u are for gta",
@@ -47,8 +65,22 @@ about_you = [
     "i love you",
     "that pretty dihh",
     "super duper freaky",
-    "all ur scenarios",
     "ur es",
+    "ur tralalalalalala song",
+    "the way ur eyes widen sometimes when u react or talk",
+    "skinny ass waist",
+    "big shoulders",
+    "'they offered me 15.. 15 million..'",
+    "when i say oi n u reply ee",
+    "when u say da flip or copy me",
+    "u lil stop n start thing w songs",
+    "u act so nonchalant, but ur so funny n cute",
+    "how u act when u sleepy",
+    "how cute u were as baby",
+    "ur weird ass antics like ur pen game",
+    "u my unda",
+    "ur voice gets higher when u talk louder",
+    "u so warm"
 ]
 
 @app.route('/get-memory')
@@ -59,8 +91,15 @@ def get_memory():
 def get_love():
     return jsonify(random.choice(about_you))
 @app.route('/')
+@app.route('/')
 def home():
-    return render_template('index.html', days=days_together, hours=hours_together)
+    return render_template(
+        'index.html',
+        days=days_together,
+        hours=hours_together,
+        memories=our_memories,
+        about=about_you
+    )
 
 
 

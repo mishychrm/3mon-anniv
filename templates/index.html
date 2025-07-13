@@ -87,6 +87,20 @@
     <button onclick="toggleMusic()" id="music-button">play music</button>
 
     <div id="result"></div>
+    <div style="margin: 30px 0;"></div>
+<h2>Things I love about you 💕</h2>
+<ul style="list-style-type: '💖 '; padding-left: 0; text-align: left; max-width: 600px; margin: 0 auto;">
+  {% for thing in about %}
+    <li style="margin-bottom: 10px;">{{ thing }}</li>
+  {% endfor %}
+</ul>
+<div style="margin: 30px 0;"></div>
+<h2>Our memories together ✨</h2>
+<ul style="list-style-type: '🌸 '; padding-left: 0; text-align: left; max-width: 600px; margin: 0 auto;">
+  {% for memory in memories %}
+    <li style="margin-bottom: 10px;">{{ memory }}</li>
+  {% endfor %}
+</ul>
 
     <audio id="bg-music">
         <source src="{{ url_for('static', filename='24hourssong.mp3') }}" type="audio/mpeg">
