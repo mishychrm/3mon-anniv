@@ -21,7 +21,9 @@ our_memories = [
     "our son working at maccas",
     "getting freaky tg 24/7",
     "my dad catching us at mm3",
-    "u buying window covers so we can get freaky n them not fitting"
+    "u buying window covers so we can get freaky n them not fitting",
+    "the week b4 we started dating having those long convos",
+    "o-week",
 ]
 
 about_you = [
@@ -44,7 +46,9 @@ about_you = [
     "when u start overexplaining things u like",
     "i love you",
     "that pretty dihh",
-    "super duper freaky"
+    "super duper freaky",
+    "all ur scenarios",
+    "ur es",
 ]
 
 @app.route('/get-memory')
